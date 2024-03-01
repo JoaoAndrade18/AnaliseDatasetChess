@@ -14,10 +14,10 @@ def players():
         csv_data = csv.reader(file)
         for row in csv_data: 
             black_id.append(row[10]) 
-        black_id = black_id[1:]
+        black_id = black_id[1:-2]
 
     print(len(white_id), len(black_id))
-    print(white_id[0], black_id[0])
+    print(white_id[20055], black_id[20055])
 
 def remove_duplicados():
     white_id = []
@@ -60,10 +60,10 @@ def combined():
         black_id = black_id[1:]
 
     combined_ids = list(zip(white_id, black_id))
-    print(len(combined_ids))
-    print(combined_ids[1])
+    print(len(combined_ids)-2)
+    print(combined_ids[-3])
 
 if __name__ == "__main__":
-    remove_duplicados()
+    players()
 
 

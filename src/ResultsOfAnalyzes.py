@@ -14,6 +14,7 @@ for row in games:
         matches.append([])
     else:
         matches[-1].append(row)
+print(len(matches))
 
 # quantidade de movimentos que coincidem por partidas
 count_agrees = []
@@ -63,7 +64,6 @@ for match in matches:
         agrees = sum(1 for move in match if move[1] == move[3])
         percentage = (agrees / total_moves) * 100
         percentage_agrees.append(percentage)
-print(len(percentage_agrees))
 
 # Gerar histograma
 plt.figure()
@@ -100,14 +100,20 @@ for color, openings in opening_freq_black.items():
 plt.figure()
 plt.hist(count_agrees)
 plt.title('movimentos que coincidem com o movimento do motor por partida')
+plt.xlabel('Quantidade')
+plt.ylabel('Quantidade')
 plt.show()
 
 plt.figure()
 plt.hist(count_movements_match)
 plt.title('Distribuicao de movimentos por partidas')
+plt.xlabel('Quantidade')
+plt.ylabel('Quantidade')
 plt.show()
 
 plt.figure()
 plt.boxplot(count_movements_match)
-plt.title('Distribuicao de movimentos por partidas com boxplot')
+plt.title('Distribuicao de movimentos por partidas')
+plt.ylabel('Quantidade')
+plt.xlabel(' ')
 plt.show()
